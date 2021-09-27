@@ -1,34 +1,16 @@
+"use strict"
+
 function solveEquation(a, b, c) {
-  let arr;
-
-  
-  "use strict";
-
-let quadraticEquation = (a, b, c) => {
- 
-    if(a == 0)
-        return false;
-    let res = {};
-    let D = b * b - 4 * a * c;
-    console.log('D = ' + D);
-    if(D < 0)
-        return false;
-    res['discriminant'] = D;
-    if(D == 0)
-        res["quadratic roots"] = (-b + Math.sqrt(D)) / (2 * a);
-    else if(D > 0){
-        let tmp = [];
-        tmp.push((-b + Math.sqrt(D)) / (2 * a));
-        tmp.push((-b - Math.sqrt(D)) / (2 * a));
-        res["quadratic roots"] = tmp;
-    }
-    return res;
-}
-console.log(quadraticEquation(5,7,1));
-
-  
-  
-  return res;
+  let arr = [];
+  let d= b ** 2 - 4 * a *c;
+  if (d == 0) {
+	  arr.push(-b / (2 * a));
+  } 
+  if (d > 0) {
+	  arr.push((-b + Math.sqrt(d)) / (2 * a));
+	  arr.push((-b - Math.sqrt(d)) / (2 * a));  
+  }
+  return arr; // array
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
