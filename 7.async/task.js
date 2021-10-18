@@ -43,9 +43,10 @@ class AlarmClock {
     start() {
         let forTime = this;
         function checkClock(alarm) {
-            if (alarm.time === forTime.getCurrentFormattedTime()) {
+            if (alarm.time === this.getCurrentFormattedTime()) {
                 alarm.callBack();
             }
+        
         }
         if (this.timerId === null) {
             this.timerId = setInterval(() => {
